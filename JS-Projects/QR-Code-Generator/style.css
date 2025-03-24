@@ -1,0 +1,52 @@
+/* style.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e3f2fd; /* Light Blue */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    background: #ffffff; /* White */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 340px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #90caf9;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #1e88e5; /* Blue */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1565c0; /* Darker Blue */
+}
+
+#qrCodeContainer {
+    margin: 20px 0;
+}
+
+#qrCode {
+    width: 150px;
+    display: none;
+}
