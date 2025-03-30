@@ -1,14 +1,19 @@
 // script.js
-async function getJoke() {
-    let jokeText = document.getElementById("joke");
+const quotes = [
+    { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+    { quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+    { quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+    { quote: "Act as if what you do makes a difference. It does.", author: "William James" },
+    { quote: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" }
+];
 
-    jokeText.textContent = "Loading... 😂";
-
-    try {
-        let response = await fetch("https://official-joke-api.appspot.com/random_joke");
-        let data = await response.json();
-        jokeText.textContent = `${data.setup} 🤣 ${data.punchline}`;
-    } catch (error) {
-        jokeText.textContent = "Oops! Couldn't load a joke. Try again!";
-    }
+function getRandomQuote() {
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = `"${quotes[randomIndex].quote}"`;
+    document.getElementById("author").textContent = `- ${quotes[randomIndex].author}`;
 }
+
+document.getElementById("new-quote").addEventListener("click", getRandomQuote);
+
+// Load a random quote when the page loads
+getRandomQuote();
